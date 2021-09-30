@@ -1,0 +1,10 @@
+on boot
+    start vendor.vibrator-1-0
+
+service vendor.vibrator-1-0 /system/bin/android.hardware.vibrator@1.0-service
+    interface android.hardware.vibrator@1.0::IVibrator default
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
